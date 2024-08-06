@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
+  animation: App-logo-zoom-in infinite 3s ease-in-out;
+  position: absolute;
+  top: 10%;
+  right: 45%;
+  transform: translate(-45, 0);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes App-logo-zoom-in {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
   }
 }
 
+.p {
+  font-size: 2rem; /* Adjust the font size as needed */
+  color: #000000; /* Change to bold black */
+  margin: 1rem 0; /* Adjust top and bottom margin as needed */
+  text-align: center; /* Center align the text horizontally */
+  font-weight: bold; /* Make the text bold */
+  text-transform: uppercase;
+  font-style: italic; /* Italicize the text */
+}
+
 .App-header {
-  background-color: #282c34;
+  background: url("C:/Users/nj934/OneDrive/Pictures/bgggg.jpg") no-repeat center center fixed; /* Background image */
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #000000; /* Change to bold black */
+  font-weight: bold; /* Make the text bold */
+}
+
+.App-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold; /* Make the text bold */
 }
 
 .App-link {
-  color: #61dafb;
+  color: #000000; /* Change to bold black */
+  text-decoration: none; /* Removes underline */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+  margin: 10px 0; /* Add margin to separate the links */
+  font-weight: bold; /* Make the text bold */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-link:hover {
+  color: rgb(215, 10, 10); /* Color to change to on hover */
+  text-decoration: underline; /* Optional: Adds underline on hover for better visibility */
+  font-weight: bold; /* Make the text bold */
 }

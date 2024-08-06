@@ -1,0 +1,173 @@
+/* Base Container Styling */
+.admin-container {
+  display: flex;
+  flex-direction: row; /* Align containers horizontally */
+  padding: 20px;
+  position: relative; /* Position relative for pseudo-element positioning */
+  min-height: 100vh;
+  font-size: 16px; /* Base font size */
+}
+
+.admin-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("C:\Users\nj934\OneDrive\Pictures\ads - crop 2024-07-24 16-47-29.jpg") no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.7; /* Adjust opacity to create shadow effect */
+  z-index: -1; /* Place pseudo-element behind the content */
+}
+
+/* Header Styling */
+.admin-header {
+  display: flex;
+  justify-content: center; /* Center header content horizontally */
+  align-items: center; /* Center header content vertically */
+  position: fixed; /* Fix header position at the top */
+  top: 0; /* Position at the top of the page */
+  width: 100%; /* Full width of the viewport */
+  padding: 10px; /* Padding around the title */
+  z-index: 1000; /* Ensure the header is above other content */
+}
+
+.admin-header h2 {
+  font-size: 2rem; /* Adjust font size for the title */
+  color: #000; /* Black color for better contrast */
+  font-weight: bold; /* Bold text */
+  margin: 0; /* Remove default margin */
+  text-align: center; /* Center align text within the header */
+}
+
+/* Table Container Styling */
+.table-container {
+  display: flex;
+  flex-direction: column; /* Align tables vertically */
+  gap: 20px;
+  padding: 10px; /* Add padding around tables */
+  margin-top: 60px; /* Ensure tables are below the fixed header */
+  flex: 1; /* Allow table container to grow */
+  margin-bottom: 100px;
+}
+
+/* Daily and Monthly Tables */
+.daily-table, .monthly-table {
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Less pronounced shadow */
+  padding: 10px; /* Reduced padding */
+  width: 100%; /* Full width */
+  max-width: 900px; /* Maximum width for larger screens */
+  overflow-x: auto; /* Horizontal scroll if needed */
+  flex: 1; /* Allow tables to grow and shrink */
+}
+
+.table-header {
+  font-size: 1.5rem; /* Slightly larger font size for emphasis */
+  color: #000; /* Black color */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 20px;
+  text-align: center; /* Center align table headers */
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+}
+
+th, td {
+  padding: 8px; /* Reduced padding */
+  border: 1px solid #000000;
+  text-align: center; /* Center align text in table cells */
+  color: #000; /* Black color */
+  font-weight: bold; /* Bold text */
+}
+
+th {
+  
+  font-size: 1.25rem; /* Larger font size for headers */
+  color: #000; /* Black color */
+  font-weight: bold; /* Bold text */
+}
+
+td {
+  font-size: 1rem; /* Consistent font size for table data */
+  color: #000; /* Black color */
+  font-weight: bold; /* Bold text */
+}
+
+/* Flexbox Layout for Charts (Right Side) */
+.chart-wrapper {
+  display: flex;
+  flex-direction: column; /* Arrange charts vertically */
+  gap: 20px; /* Space between charts */
+  padding: 15px; /* Reduced padding */
+  width: 200px; /* Further reduced width for the chart container */
+  margin-left: 20px; /* Space between the table and chart container */
+  margin-top: 60px; /* Ensure charts are below the fixed header */
+}
+
+/* Individual Chart Container */
+.chart-container {
+  border-radius: 4px;
+  padding: 10px; /* Reduced padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Less pronounced shadow */
+  text-align: center; /* Center align chart header */
+  color: #000; /* Black color */
+  font-weight: bold; /* Bold text */
+}
+
+/* Pie and Bar Chart Specific Styling */
+.pie-chart, .bar-chart {
+  width: 100%; /* Full width of the container */
+  height: 300px; /* Further reduced height for charts */
+  margin: 0; /* Remove margin if any */
+  color: #000; /* Black color */
+  font-weight: bold; /* Bold text */
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .admin-container {
+    flex-direction: row; /* Ensure horizontal layout */
+  }
+
+  .table-container {
+    flex-direction: row; /* Ensure tables are side-by-side */
+    gap: 20px; /* Space between table containers */
+    margin-top: 60px; /* Ensure tables are below the fixed header */
+  }
+
+  .daily-table, .monthly-table {
+    flex: 1;
+  }
+
+  /* Flexbox Layout for Charts */
+  .chart-wrapper {
+    flex-direction: column; /* Ensure charts are stacked vertically */
+    width: 300px; /* Further reduced width for charts */
+    margin-top: 60px; /* Ensure charts are below the fixed header */
+  }
+
+  .chart-container {
+    max-width: 100%; /* Adjust for larger screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    flex-direction: column; /* Stack tables vertically on smaller screens */
+  }
+
+  /* Flexbox Layout for Charts */
+  .chart-wrapper {
+    flex-direction: column; /* Ensure charts stack vertically on smaller screens */
+    width: 100%; /* Full width on smaller screens */
+    margin-top: 20px; /* Adjust top margin for smaller screens */
+  }
+
+  .chart-container {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
